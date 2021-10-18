@@ -50,21 +50,82 @@ function highestCount(p1) {
 }
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(mouse, cat1, cat2) {
+  let dist1 = (mouse - cat1)**2
+  let dist2 = (mouse - cat2)**2
+  if (dist1 < dist2) {
+    return "cat1"
+  } else if (dist2 < dist1){
+    return "cat2"
+  } else {
+    return "os gatos trombam e o rato foge"
+  }
+
 }
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+function fizzBuzz(p1) {
+let res = []
+  for (i in p1) {
+    if (p1[i]%3 == 0 && p1[i]%5 == 0) {
+      res[i] = 'fizzBuzz'
+    } else if (p1[i]%3 == 0) {
+      res[i] = 'fizz'
+    } else if(p1[i]%5 == 0) {
+      res[i] = 'buzz'
+    } else {
+      res[i] = 'bug!'
+    }
+  }
+  return res
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(p1) {
+  cod = p1.split('')
+  for (i in cod) {
+    switch (cod[i]) {
+      case 'a':
+        cod[i] = '1'
+        break
+      case 'e':
+        cod[i] = '2'
+        break
+      case 'i':
+        cod[i] = '3'
+        break
+      case 'o':
+        cod[i] = '4'
+        break
+      case 'u':
+        cod[i] = '5'
+        break
+    }
+  }
+  return cod.join('')
 }
-function decode() {
-  // seu código aqui
+function decode(p1) {
+  cod = p1.split('')
+  for (i in cod) {
+    switch (cod[i]) {
+      case '1':
+        cod[i] = 'a'
+        break
+      case '2':
+        cod[i] = 'e'
+        break
+      case '3':
+        cod[i] = 'i'
+        break
+      case '4':
+        cod[i] = 'o'
+        break
+      case '5':
+        cod[i] = 'u'
+        break
+    }
+  }
+  return cod.join('')
 }
 
 module.exports = {
