@@ -24,16 +24,29 @@ function concatName(p1) {
   let res = [p1[p1.length-1], p1[0]]
   return res.join(', ')
 }
-console.log(concatName(['foguete','tem', 'ré']))
 
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
+function footballPoints(wins, ties) {
+  let total = wins*3 + ties
+  return total
 }
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+function highestCount(p1) {
+  let maior = 0
+  let cont = 0
+  for (i in p1) {
+    if (i == 0) {
+      maior = i
+      cont = 1
+    }else if (p1[i] > p1[maior]) {
+      maior = i
+      cont = 1
+    } else if (p1[i] == p1[maior]) {
+      cont += 1
+    }
+  }
+  return cont
 }
 
 // Desafio 7
