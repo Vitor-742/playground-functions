@@ -1,12 +1,37 @@
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(arrTec, name) {
+  if (arrTec.length == 0) {
+    return 'Vazio!'
+  }
+  arrTec.sort();
+  let arr2 = []
+  for (i in arrTec) {
+    arr2[i] = {tech: arrTec[i], 'name': name}
+  }
+  return arr2
 }
 
 // Desafio 11
-function generatePhoneNumber() {
-  // seu código aqui
+function generatePhoneNumber(p1) {
+  
+  if (p1.length != 11) {
+    return "Array com tamanho incorreto."
+  }
+  for (i in p1) {
+    let cont = 0
+    for (i2 in p1) {
+      if (p1[i] == p1[i2]) {
+        cont += 1
+      }
+    }
+  if (p1[i] < 0 || p1[i] > 9 || cont >= 3) {
+    return "não é possível gerar um número de telefone com esses valores"
+  }
+  }
+  let num = '(' + p1[0] + p1[1] + ') ' + p1[2] + p1[3] + p1[4] + p1[5] + p1[6]+ '-' + p1[7] + p1[8] + p1[9] + p1[10]
+  return num
 }
+console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]))
 
 // Desafio 12
 function triangleCheck() {
